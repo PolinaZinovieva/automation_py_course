@@ -75,7 +75,7 @@ print(first_name)
 
 # Task2
 # Area of circle and circumference
-radius = int(
+radius = float(
     input("Enter the radius of some circle in m and I will show you the magic")
 )
 circumference = 2 * math.pi * radius
