@@ -1,0 +1,1 @@
+C:\Users\Pinov\PycharmProjects\pythonProject1\zinovieva_lesson3_homework.py
