@@ -1,7 +1,6 @@
 import random
 
 # Task 1
-
 min = random.randrange(60)
 print(min)
 if min >= 0 and min <= 15:
@@ -12,7 +11,6 @@ elif min > 30 and min <= 45:
     print("Third quarter")
 else:
     print("Fourth quarter")
-
 
 
 # Task 2
@@ -31,6 +29,7 @@ if birth_month > 0 and birth_month < 13:
         print("Everything around was litting up with bright colours")
 else:
     print(" enter values in a range from 1 to 12")
+
 
 # Task 3
 x = random.randint(0, 9999)
@@ -76,6 +75,7 @@ else:
     else:
         print("Cannot devide by 6")
 
+
 # Task 4
 x = float(input("Enter x"))
 y = float(input("Enter y"))
@@ -94,4 +94,3 @@ elif x != 0 and y == 0:
     print(coordinates + "The value is on x-axis")
 else:
     print(coordinates + "The value is at origin")
-
