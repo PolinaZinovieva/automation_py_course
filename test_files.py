@@ -1,5 +1,5 @@
 from Package2.hw18_pytest_zinovieva import Files
-
+import pytest
 class FileTest:
     def __init__(self):
         self.files = Files("new.csv", ['1', 'Polina', '2', 'Adrianne', '3', 'Elena', '4', 'Bella'])
