@@ -46,9 +46,9 @@ class Material(Art):
         my_money = 20000
         selling = my_money - self._price
         if selling >= 0:
-            print(f"You have bought a painting, now you have {selling} euros")
+            return(f"You have bought a painting, now you have {selling} euros")
         else:
-            print(
+            return(
                 f"Your account balance will be {selling}. It is < 0. Sorry,next time."
             )
 
@@ -88,7 +88,7 @@ class Spiritual(Art):
 
     def purchase(self):
         if self._price <= 0:
-            print("You can't buy spiritual art, its priceless")
+            return("You can't buy spiritual art, its priceless")
 
     def music_in_museum(self):
         author = self._author
@@ -97,9 +97,9 @@ class Spiritual(Art):
         )
         res = re.findall(self._author, allowed_spir_authors)
         if res:
-            print(f"{res}-allowed music author")
+            return(f"{res}-allowed music author")
         else:
-            print("Don't listen to it")
+            return("Don't listen to it")
 
 
 penitent_magdalene = Material(

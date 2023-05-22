@@ -4,7 +4,7 @@ class FileTest:
     def __init__(self):
         self.files = Files("new.csv", ['1', 'Polina', '2', 'Adrianne', '3', 'Elena', '4', 'Bella'])
 
-    def setup_class(self):
+    def setup_class(self):0
         print('\nwere in setup class section')
 
 
