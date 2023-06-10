@@ -1,52 +1,41 @@
 from Homework_22.homework22.pages.base_page import BasePage
 from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver import Keys
-
+from Homework_22.homework22.pages.support_page import ElementsSP
+from Homework_22.core.locator import Locator
+from Homework_22.Locators.header_locators import HeaderLocatorsCollection
 
 class HeaderBlock(BasePage):
     def __init__(self, driver: WebDriver):
         super().__init__(driver)
-        self.__store =('xpath', "//*[@id='navlink-store'] ")
-        self.__store_search = ('xpath', "//*[@id='SearchLayout']/div[2]/div/input")
-        self.__game = ('xpath', "//*[@alt='EA SPORTS™ FIFA 23 Standard Edition']")
-        self.__distr = ('xpath', "//*[@id='sitenav-link-1']/a")
-        self.__support = ('xpath', "//*[@id='sitenav-link-2']")
-        self.__ue=('xpath',"//*[@id='sitenav-link-4']/a")
+        self.__store = HeaderLocatorsCollection().store_locator
+        self.__store_search = HeaderLocatorsCollection().search_loc
+        self.__game = HeaderLocatorsCollection().game_loc
+        self.__distr = HeaderLocatorsCollection().distr_loc
+        self.__support = HeaderLocatorsCollection().support_loc
+        self.__ue = HeaderLocatorsCollection().ue_loc
 
 
-
-
-
-
-
-
-
-    def open_store(self, name):
-        locator = ('xpath', f"//*[@id='navlink-{name}'and @tabindex='-1']")
-        element = self._wait_until_el_appears(locator)
-        element.click()
-
-
-
+    def open_store(self):
+        self._click(Locator(*self.__store))
 
 
     def find_game(self):
-        element = self._wait_until_el_appears(self.__store_search)
+        element = self._wait_until_el_appears(Locator(*self.__store_search))
         element.send_keys("FIFA 23")
         element.send_keys(Keys.ENTER)
 
     def open_distribution(self):
-        element = self._wait_until_el_appears(self.__distr)
-        element.click()
-
+        self._click(Locator(*self.__distr))
 
     def open_support(self):
-        element = self._wait_until_el_appears(self.__support)
-        element.click()
+        self._click(Locator(*self.__support))
+        return ElementsSP(self._driver)
 
     def open_ue(self):
-        element = self._wait_until_el_appears(self.__ue)
-        element.click()
+        self._click(Locator(*self.__ue))
+
+
 
 
 
