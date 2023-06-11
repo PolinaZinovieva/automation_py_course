@@ -1,0 +1,25 @@
+{
+  "country": [
+    {
+      "country_id": "RU",
+      "probability": 0.252
+    },
+    {
+      "country_id": "BG",
+      "probability": 0.139
+    },
+    {
+      "country_id": "UA",
+      "probability": 0.128
+    },
+    {
+      "country_id": "BY",
+      "probability": 0.094
+    },
+    {
+      "country_id": "IL",
+      "probability": 0.07
+    }
+  ],
+  "name": "polina"
+}
