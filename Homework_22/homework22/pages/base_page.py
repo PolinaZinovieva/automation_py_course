@@ -10,14 +10,18 @@ class BasePage:
 
 
 
+    # def _wait_until_el_appears(self, locator: Locator):
+    #     return self._web_driver_wait.until(EC.presence_of_element_located(locator.to_tuple()))
     def _wait_until_el_appears(self, locator: Locator):
-        return self._web_driver_wait.until(EC.presence_of_element_located(locator.to_tuple()))
+        return self._web_driver_wait.until(
+            EC.presence_of_element_located(locator.to_tuple())
+        )
 
     def driver_back(self):
         driver = Chrome("Homework_22/driver/chromedriver.exe")
         driver.back()
 
-    def _click(self, locator: Locator):
+    def _click(self, locator:Locator):
         self._wait_until_el_appears(locator).click()
 
 

@@ -2,7 +2,7 @@ import time
 
 
 def test01_check_store_open(header_block):
-    header_block.open_store("store")
+    header_block.open_store()
 
 
 def test02_check_search_store(header_block):
@@ -23,5 +23,4 @@ def test05_check_unreal_engine(header_block):
     header_block.open_ue()
 
 
-# def search(check_store):
-#     check_store.find_game()
+

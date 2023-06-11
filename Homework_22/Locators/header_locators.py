@@ -1,6 +1,6 @@
 class HeaderLocatorsCollection:
     def __init__(self):
-        self.__store_locator = ("xpath", "//*[@id='navlink-store'] ")
+        self.__store_locator = ("xpath", "/html/body/div[1]/div/div[1]/header/div/div[2]/div/div[1]/div[1]/div/div[1]/div/div/a")
         self.__search_locator = ('xpath', "//*[@id='SearchLayout']/div[2]/div/input")
         self.__game_locator = ('xpath', "//*[@alt='EA SPORTS™ FIFA 23 Standard Edition']")
         self.__distr_locator = ('xpath', "//*[@id='sitenav-link-1']/a")

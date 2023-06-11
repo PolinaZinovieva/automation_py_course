@@ -10,6 +10,7 @@ def driver():
     driver = Chrome("Homework_22/driver/chromedriver.exe")
     driver.get("https://www.epicgames.com/site/en-US/home")
     driver.maximize_window()
+    print(driver.get_cookies())
 
     yield driver
 
