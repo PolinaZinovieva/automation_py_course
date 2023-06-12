@@ -9,9 +9,6 @@ class BasePage:
         self._web_driver_wait = WebDriverWait(self._driver, 10)
 
 
-
-    # def _wait_until_el_appears(self, locator: Locator):
-    #     return self._web_driver_wait.until(EC.presence_of_element_located(locator.to_tuple()))
     def _wait_until_el_appears(self, locator: Locator):
         return self._web_driver_wait.until(
             EC.presence_of_element_located(locator.to_tuple())

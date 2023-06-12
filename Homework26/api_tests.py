@@ -1,4 +1,3 @@
-from Homework26.fixtures import api_test_configs
 def test_01(api_test_configs):
     api_test_configs.test_get()
 
