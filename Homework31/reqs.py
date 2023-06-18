@@ -1,6 +1,8 @@
 import requests
 import json
-class TestRequests:
+from Homework31.storage import Storage
+class TestRequests(Storage):
+    super().new_data()
     product_url = "https://api.restful-api.dev/objects"
 
     product_headers = {"content-type": "application/json"}
@@ -23,13 +25,11 @@ class TestRequests:
             "Hard disk size": "256 GB"
         }
     })
+    post_add_object = requests.post(product_url, data=product_json,headers=product_headers,
+    )
     def test_post(self):
-        post_add_object = requests.post(
-            TestRequests.product_url,
-            data=TestRequests.product_json,
-            headers=TestRequests.product_headers,
-            )
-        a = post_add_object.json()["id"]
+
+        a = TestRequests.post_add_object.json()["id"]
         get_obj = requests.get(f"{TestRequests.product_url}/{a}",headers=TestRequests.product_headers)
 
 
@@ -49,11 +49,12 @@ class TestRequests:
         assert self.cpu_var == self.cnvtr2["data"]["CPU model"]
         assert self.hard_var == self.cnvtr2["data"]["Hard disk size"]
 
-
+    def put_update(self):
+        a = TestRequests.post_add_object.json()["id"]
         put_update_object = requests.put(f"{TestRequests.product_url}/{a}",
                 data=TestRequests.product_update,
                 headers=TestRequests.product_headers,
-            )
+                )
         b = put_update_object.json()["id"]
         get_obj2 = requests.get(f"{TestRequests.product_url}/{b}", headers=TestRequests.product_headers)
         self.cnvtr = get_obj2.json()
@@ -71,6 +72,26 @@ class TestRequests:
         assert self.cnvtr["data"]["price"] == self.cnvtr2["data"]["price"]
         assert self.cpu_var_n == self.cnvtr2["data"]["CPU model"]
         assert self.hard_var_n == self.cnvtr2["data"]["Hard disk size"]
+
+
+    def from_storage(self):
+
+        Storage().new_data(name='airpods', price=2000, year=2022, name2=self.name_var_n)
+        a = TestRequests.post_add_object.json()["id"]
+
+        put_update2_object = requests.put(f"{TestRequests.product_url}/{a}",
+                                             data=self.new_product,
+                                             headers=TestRequests.product_headers,
+                                             )
+        c = put_update2_object.json()["id"]
+        get_obj3 = requests.get(f"{TestRequests.product_url}/{c}", headers=TestRequests.product_headers)
+        self.cnvtr = get_obj3.json()
+        self.cnvtr2 = put_update2_object.json()
+
+
+
+
+
 
 
     # def test_put(self):
